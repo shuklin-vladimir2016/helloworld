@@ -61,6 +61,6 @@ public class Main {
         System.out.println("Всего работников в компании " + employeeAmount + " человек");
         var newEmployeeAmount = employeeAmount + 94;
         var newCommonAmountOfWork = newEmployeeAmount * oneEmployeeWorkHoursAmount;
-        System.out.println("Если в компании работает " + newEmployeeAmount + " человека,то всего " + newCommonAmountOfWork+ " часа работы может быть поделено между сотрудниками ");
+        System.out.println("Если в компании работает " + newEmployeeAmount + " человека,то всего " + newCommonAmountOfWork + " часа работы может быть поделено между сотрудниками ");
     }
 }
