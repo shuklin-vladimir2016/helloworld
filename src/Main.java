@@ -8,7 +8,7 @@ public class Main {
         int month = 0;
         while (sum < desiredSum) {
             sum += amount;
-            sum = (int) (sum * (1 + percent));
+            sum =(int) (sum * (1 + percent));
             month++;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + sum + " рублей");
         }
@@ -17,11 +17,13 @@ public class Main {
         int number = 0;
         while (number < 10) {
             number++;
-            System.out.println(number + " ");
+            System.out.print(number + " ");
         }
+        System.out.println();
         for (; number >= 1; number--) {
-            System.out.println(number + " ");
+            System.out.print(number + " ");
         }
+        System.out.println();
 
         System.out.println("Task 3");
         int population = 12_000_000;
