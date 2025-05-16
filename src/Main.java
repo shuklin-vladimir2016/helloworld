@@ -27,10 +27,18 @@ public class Main {
         System.out.println("Task 2");
 
         int[] wastes = {35000, 43000, 37000, 31000, 32000};
-        Arrays.sort(wastes);
         int min = wastes[0];
-        int max = wastes[wastes.length - 1];
-        System.out.println("Минимальная сумма трат за неделю составила " + min + " рублей." + " Максимальная сумма трат за неделю составила " + max + " рублей");
+        int max = wastes[0];
+        for (int i = 1; i < wastes.length; i++) {
+            if (wastes[i] < min) {
+                min = wastes[i];
+            }
+            if (wastes[i] > max) {
+                max = wastes[i];
+            }
+        }
+        System.out.println("Минимальная сумма трат за неделю составила " + min + " рублей");
+        System.out.println("Максимальная сумма трат за неделю составила " + max + " рублей");
 
         System.out.println("Task 3");
 
@@ -45,7 +53,16 @@ public class Main {
         System.out.println("Task 4");
 
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+        int start = 0;
+        int end = reverseFullName.length - 1;
+        while (start < end) {
+            char temp = reverseFullName[start];
+            reverseFullName[start] = reverseFullName[end];
+            reverseFullName[end] = temp;
+            start++;
+            end--;
+        }
+        for (int i = 0; i < reverseFullName.length; i++) {
             System.out.print(reverseFullName[i]);
         }
     }
