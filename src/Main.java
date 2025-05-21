@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Task 1");
-        System.out.println(checkLeapYear(2025));
+        checkLeapYear(2025);
 
         System.out.println("Task 2");
         recommendAppVersion(0, 2014);
@@ -13,27 +13,30 @@ public class Main {
         System.out.println("Потребуется дней: " + calculateDeliveryDays(deliveryDistance));
     }
 
-    public static String checkLeapYear(int year) {
+    public static void checkLeapYear(int year) {
 
-        year = 2025;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            return year + " год - високосный год";
+        boolean isLeapyear = (year % 4 == 0 && year % 100 != 0 || year % 400 == 0);
+        if (isLeapyear) {
+            System.out.println(year + " год - високосный год");
         } else {
-            return year + " год - не високосный год";
+            System.out.println(year + " год - не високосный год");
         }
     }
 
     public static void recommendAppVersion(int osType, int deviceYear) {
 
-        String os = (osType == 0) ? "iOS" : "Android";
-        String messge;
-
-        if (deviceYear < 2015) {
-            messge = "Установите облегченную версию приложения для " + os + " по ссылке";
+        if (osType == 0) {
+            if (deviceYear >= 2015) {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            }
+        } else if (osType == 1) {
+            if (deviceYear >= 2015)
+                System.out.println("Установить версию приложения для Android по ссылке");
         } else {
-            messge = "Установите приложение для " + os + " по ссылке";
+            System.out.println("Установить облегченную версию приложения для Android по ссылке");
         }
-        System.out.println("Установить приложение для " + os + " по ссылке");
     }
 
     public static int calculateDeliveryDays(int distance) {
