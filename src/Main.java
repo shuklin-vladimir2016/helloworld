@@ -14,9 +14,8 @@ public class Main {
     }
 
     public static void checkLeapYear(int year) {
-
-        boolean isLeapyear = (year % 4 == 0 && year % 100 != 0 || year % 400 == 0);
-        if (isLeapyear) {
+        boolean Leapyear = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+        if (Leapyear) {
             System.out.println(year + " год - високосный год");
         } else {
             System.out.println(year + " год - не високосный год");
@@ -24,7 +23,6 @@ public class Main {
     }
 
     public static void recommendAppVersion(int osType, int deviceYear) {
-
         if (osType == 0) {
             if (deviceYear >= 2015) {
                 System.out.println("Установите версию приложения для iOS по ссылке");
@@ -40,7 +38,6 @@ public class Main {
     }
 
     public static int calculateDeliveryDays(int distance) {
-
         if (distance <= 20) {
             return 1;
         } else if (distance <= 60) {
